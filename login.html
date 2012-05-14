@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html><head>
+<title>HTML KickStart</title>
+<meta charset="UTF-8">
+<meta name="description" content="" />
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script type="text/javascript" src="js/prettify.js"></script>                                   <!-- PRETTIFY -->
+<script type="text/javascript" src="js/kickstart.js"></script>                                  <!-- KICKSTART -->
+<link rel="stylesheet" type="text/css" href="css/kickstart.css" media="all" />                  <!-- KICKSTART -->
+<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />                          <!-- CUSTOM STYLES -->
+</head>
+<body>
+<div id="header" class="clearfix">
+	<div id="logo">
+	<a href="#">Project Name</a>
+	</div>
+	<div id="header-r-menu">
+		<button class="small"><span class="icon" data-icon="i"></span>アカウントを作成する</button>
+	</div>
+</div>
+
+<a id="top-of-page"></a>
+
+<div id="wrap" class="clearfix">
+
+	<div class="col_12">
+		<div class="col_4">
+		</div>
+
+		<div class="col_4">
+			<form class="vertical" _lpchecked="1">
+				<div class="inner">
+					<label for="text2">Username</label>
+					<input id="text2" type="text" placeholder="email" autocomplete="off" goog_input_chext="chext">
+					<div class="notice error"><span class="icon medium" data-icon="X" style="display: inline-block; "></span>This is an Error Notice <a href="#close" class="icon close" data-icon="x" style="display: inline-block; "></a></div>
+					<label for="text2">Password</label>
+					<input id="text2" type="password" placeholder="password" autocomplete="off" goog_input_chext="chext">
+					<div class="notice error"><span class="icon medium" data-icon="X" style="display: inline-block; "></span>This is an Error Notice <a href="#close" class="icon close" data-icon="x" style="display: inline-block; "></a></div>
+					<input type="submit" value="ログイン" />
+				</div>
+			</form>
+		</div>
+
+		<div class="col_4">
+		</div>
+	</div>
+
+	<!-- ===================================== START FOOTER ===================================== -->
+	<div class="clear"></div>
+	<div id="footer">
+	&copy; Copyright 2011 Project Name2012 All Rights Reserved. This website was built with <a href="http://www.99lime.com">HTML KickStart</a>
+	</div>
+
+</div><!-- END WRAP -->
+<script type="text/javascript">
+$(document).ready(function(){
+	var icons = $('#icons-base .icon, #icons-social .icon');
+	icons.addClass('gray');
+
+	icons.hover(function(){
+		if (icons.hasClass('green')) {
+			icons.removeClass('green');
+			icons.addClass('gray');
+		} else if (icons.hasClass('gray')) {
+			icons.removeClass('gray');
+			icons.addClass('green');
+		}
+	});
+
+});
+</script>
+</body></html>
