@@ -6,129 +6,120 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery/jquery-ui-1.8.20.custom.min.js"></script>
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-<script type="text/javascript" src="js/prettify.js"></script>                                   <!-- PRETTIFY -->
-<script type="text/javascript" src="js/kickstart.js"></script>                                  <!-- KICKSTART -->
-<link rel="stylesheet" type="text/css" href="css/kickstart.css" media="all" />                  <!-- KICKSTART -->
-<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />                          <!-- CUSTOM STYLES -->
-<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.8.20.custom.css" media="all" />                          <!-- JQUERY UI -->
-<style>
-<!--
-.jquery-ui-sortable{
-    padding: 0.3em;
-    font-weight: bold;
-    cursor: move;
-}
-.block-title{
-	padding-left: 4px;
-}
-ul.block-list{
-    list-style-type: none;
-}
-li.block-list{
-}
--->
-</style>
+<script type="text/javascript" src="js/prettify.js"></script>                   <!-- PRETTIFY -->
+<script type="text/javascript" src="js/kickstart.js"></script>                  <!-- KICKSTART -->
+<link rel="stylesheet" type="text/css" href="css/kickstart.css" media="all" />          <!-- KICKSTART -->
+<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />              <!-- CUSTOM STYLES -->
+<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.8.20.custom.css" media="all" />              <!-- JQUERY UI -->
 </head>
 <body>
 <div id="header">
-	<div id="logo">
-	<a href="#">Project Name</a>
-	</div>
-	<div id="header-r-menu">
-		<button class="small"><span class="icon" data-icon="u"></span>example@example.com</button>
-	</div>
+  <div id="logo">
+  <a href="#">Project Name</a>
+  </div>
+  <div id="header-r-menu">
+    <button class="small"><span class="icon gray" data-icon="u"></span>example@example.com</button>
+  </div>
 </div>
 
 <a id="top-of-page"></a>
 
 <div id="wrap" class="clearfix">
-	<div class="col_4">
-		<div class="jquery-ui-sortable">
-			<div class="white-smoke-box">
-			    <h4 class="box-title">項目 1</h4>
-				<ul class="alt bg-white">
-					<li>テスト</li>
-					<li>テスト</li>
-					<li>テスト</li>
-				</ul>
-			</div>
-			<div class="white-smoke-box">
-			    <h4 class="box-title">項目 2</h4>
-				<p class="center"><a class="video-placeholder" href="http://youtu.be/lfnAb11wKQc"><img src="http://placehold.it/250x200/222222/999999.png" width="250" height="200" /></a>			</div>
-			<div class="white-smoke-box">
-			    <h4 class="box-title">項目 3</h4>
-				<p class="center"><iframe class="map-placeholder" width="100%" height="200" src="http://maps.google.com/maps?f=q&t=m&z=5&output=embed"  frameborder="0"></iframe>
-			</div>
-		</div>
-	</div>
-	<div class="col_4">
-		<div class="jquery-ui-sortable">
-			<div class="white-smoke-box">
-			    <h4 class="box-title">項目 4</h4>
-			    <p class="center"><div class="calendar" data-month="2" data-year="2012"></div>
-			</div>
-			<div class="white-smoke-box">
-			    <h4 class="box-title">項目 5</h4>
-				<ul class="alt bg-white">
-					<li>テスト</li>
-					<li>テスト</li>
-					<li>テスト</li>
-				</ul>
-			</div>
-			<div class="white-smoke-box">
-			    <h4 class="box-title">項目 6</h4>
-				<ul class="alt bg-white">
-					<li>テスト</li>
-					<li>テスト</li>
-					<li>テスト</li>
-				</ul>
-			</div>
-		</div>
-	</div>
+  <div class="col_4">
+    <div class="jquery-ui-sortable">
+      <div class="white-smoke-box">
+        <h4 class="box-title"><span class="box-title-content">項目 1</span><span class="icon gray gray medium box-icon box-title-edit" data-icon="7" title="Edit"></span></span><span class="icon gray medium box-icon box-icon-move" data-icon="^" title="Move"></span></h4>
+        <ul class="alt bg-white">
+          <li>テスト</li>
+          <li>テスト</li>
+          <li>テスト</li>
+        </ul>
+      </div>
+      <div class="white-smoke-box">
+        <h4 class="box-title"><span class="box-title-content">項目 2</span><span class="icon gray gray medium box-icon box-title-edit" data-icon="7" title="Edit"></span><span class="icon gray medium box-icon box-icon-move" data-icon="^" title="Move"></span></h4>
+        <p class="center"><a class="video-placeholder" href="http://youtu.be/lfnAb11wKQc"><img src="http://placehold.it/250x200/222222/999999.png" width="250" height="200" /></a>      </div>
+      <div class="white-smoke-box">
+        <h4 class="box-title">項目 3<span class="icon gray gray medium box-icon" data-icon="7" title="Edit"></span></h4>
+        <p class="center"><iframe class="map-placeholder" width="100%" height="200" src="http://maps.google.com/maps?f=q&t=m&z=5&output=embed"  frameborder="0"></iframe>
+      </div>
+    </div>
+  </div>
+  <div class="col_4">
+    <div class="jquery-ui-sortable">
+      <div class="white-smoke-box">
+        <h4 class="box-title">項目 4<span class="icon gray gray medium box-icon" data-icon="7" title="Edit"></span><span class="icon gray medium box-icon box-icon-move" data-icon="^" title="Move"></span></h4>
+        <p class="center">
+          <div class="calendar-menu">
+          <span class="icon gray gray small box-icon float-l calendar_before" data-icon="{" title="Cusor-left"></span>
+          <span class="icon gray gray small box-icon float-r calendar_next" data-icon="}" title="Cusor-right"></span>
+          </div>
+          <div class="calendar" data-month="2" data-year="2012"></div>
 
-	<div class="col_4">
-		<div class="jquery-ui-sortable">
-			<div class="white-smoke-box">
-			    <h4 class="box-title">項目 7</h4>
-				<ul class="alt bg-white">
-					<li>テスト</li>
-					<li>テスト</li>
-					<li>テスト</li>
-				</ul>
-			</div>
-			<div class="white-smoke-box">
-			    <h4 class="box-title">項目 8</h4>
-				<ul class="alt bg-white">
-					<li>テスト</li>
-					<li>テスト</li>
-					<li>テスト</li>
-				</ul>
-			</div>
-			<div class="white-smoke-box">
-			    <h4 class="box-title">項目 9</h4>
-				<ul class="alt bg-white">
-					<li>テスト</li>
-					<li>テスト</li>
-					<li>テスト</li>
-				</ul>
-			</div>
-		</div>
-	</div>
+      </div>
+      <div class="white-smoke-box">
+        <h4 class="box-title">項目 5<span class="icon gray gray medium box-icon" data-icon="7" title="Edit"></span><span class="icon gray medium box-icon box-icon-move" data-icon="^" title="Move"></span></h4>
+        <ul class="alt bg-white">
+          <li>テスト</li>
+          <li>テスト</li>
+          <li>テスト</li>
+        </ul>
+      </div>
+      <div class="white-smoke-box">
+        <h4 class="box-title">項目 6<span class="icon gray gray medium box-icon" data-icon="7" title="Edit"></span><span class="icon gray medium box-icon box-icon-move" data-icon="^" title="Move"></span></h4>
+        <ul class="alt bg-white">
+          <li>テスト</li>
+          <li>テスト</li>
+          <li>テスト</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
-	<!-- ===================================== START FOOTER ===================================== -->
-	<div class="clear"></div>
-	<div id="footer">
-	&copy; Copyright 2011 Project Name2012 All Rights Reserved. This website was built with <a href="http://www.99lime.com">HTML KickStart</a>
-	</div>
+  <div class="col_4">
+    <div class="jquery-ui-sortable">
+      <div class="white-smoke-box">
+        <h4 class="box-title">項目 7<span class="icon gray gray medium box-icon" data-icon="7" title="Edit"></span><span class="icon gray medium box-icon box-icon-move" data-icon="^" title="Move"></span></h4>
+        <ul class="alt bg-white">
+          <li>テスト</li>
+          <li>テスト</li>
+          <li>テスト</li>
+        </ul>
+      </div>
+      <div class="white-smoke-box">
+        <h4 class="box-title">項目 8<span class="icon gray gray medium box-icon" data-icon="7" title="Edit"></span><span class="icon gray medium box-icon box-icon-move" data-icon="^" title="Move"></span></h4>
+        <ul class="alt bg-white">
+          <li>テスト</li>
+          <li>テスト</li>
+          <li>テスト</li>
+        </ul>
+      </div>
+      <div class="white-smoke-box">
+        <h4 class="box-title">項目 9<span class="icon gray gray medium box-icon" data-icon="7" title="Edit"></span><span class="icon gray medium box-icon box-icon-move" data-icon="^" title="Move"></span></h4>
+        <ul class="alt bg-white">
+          <li>テスト</li>
+          <li>テスト</li>
+          <li>テスト</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================== START FOOTER ===================================== -->
+  <div class="clear"></div>
+  <div id="footer">
+  &copy; Copyright 2011 Project Name2012 All Rights Reserved. This website was built with <a href="http://www.99lime.com">HTML KickStart</a>
+  </div>
 
 </div><!-- END WRAP -->
 <script>
 <!--
 $(function() {
-    $( '.jquery-ui-sortable' ) . sortable({
-        connectWith: '.jquery-ui-sortable'
+    $('.jquery-ui-sortable').sortable({
+      cursor      : 'move',
+      opacity     : 0.7,
+      connectWith : '.jquery-ui-sortable',
+      handle      : '.box-icon-move'
     });
-    $( '.jquery-ui-sortable' ) . disableSelection();
 });
 // -->
 </script>

@@ -13,7 +13,7 @@ $(document).ready(function(){
 		$(this).find('li').has('ul').addClass('has-menu')
 		.append('<span class="arrow">&nbsp;</span>');
 	});
-	
+
 	$('ul.menu li').hover(function(){
 		$(this).find('ul:first').stop(true, true).fadeIn('fast');
 		$(this).addClass('hover');
@@ -22,8 +22,8 @@ $(document).ready(function(){
 		$(this).find('ul').stop(true, true).fadeOut('slow');
 		$(this).removeClass('hover');
 	});
-	
-	
+
+
 	/*---------------------------------
 		ScrollTo/LocalScroll
 	-----------------------------------*/
@@ -32,7 +32,7 @@ $(document).ready(function(){
 		lazy: true,
 		hash: true
 	});
-	
+
 	/*---------------------------------
 		Slideshow
 	-----------------------------------*/
@@ -41,18 +41,18 @@ $(document).ready(function(){
 	.each(function(){
 		var wrap = $(this).parents('.slideshow-wrap');
 		var inner = $(this).parents('.slideshow-inner');
-		
+
 		// set height and width
 		var swidth = $(this).attr('width');
 		var sheight = $(this).attr('height');
 		if(swidth != undefined && sheight != undefined){wrap.width(swidth); inner.height(sheight);}
 		$(this).width('999em').attr('width','').attr('height','');
-	
+
 		$(this).find('li:first').addClass('current');
 		$(this).delay(2000).animate({alpha:1}, function(){
 			KSslideshow($(this), null);
 		});
-		
+
 		// add navigation buttons
 		var items = $(this).find('li');
 		wrap.append('<ul class="slideshow-buttons"></ul>');
@@ -60,7 +60,7 @@ $(document).ready(function(){
 			wrap.find('.slideshow-buttons')
 			.append('<li><a href="#slideshow-'+index+'" rel="'+index+'">'+(index+1)+'</a></li>');
 		});
-		
+
 		// stop play button
 		wrap.find('.slideshow-buttons')
 		.append('<li class="slideshow-stop"><a href="#slideshow-stop">Stop</a></li>');
@@ -71,7 +71,7 @@ $(document).ready(function(){
 			var slideshow = $(this).parents('.slideshow-wrap').find('ul.slideshow');
 			KSslideshow(slideshow, next);
 		});
-		
+
 		// button events
 		$('.slideshow-buttons li:first').addClass('current');
 		wrap.find('.slideshow-buttons li').not('.slideshow-stop').find('a').click(function(e){
@@ -82,18 +82,18 @@ $(document).ready(function(){
 			KSslideshow(slideshow, next);
 		});
 	});
-	
+
 	// run slideshow
 	function KSslideshow(slideshow, next){
 		var wrap = slideshow.parents('.slideshow-wrap');
 		var inner = slideshow.parents('.slideshow-inner');
 		var current = slideshow.find('li.current');
 		var nav = slideshow.parents('.slideshow-wrap').find('.slideshow-buttons li');
-		var sstop = nav.filter('.slideshow-stop');	
-		
+		var sstop = nav.filter('.slideshow-stop');
+
 		// next slide
 		if(next == null) {
-			next = current.next();		
+			next = current.next();
 			if(next.length < 1) { next = slideshow.find('li:first'); }
 			wrap.removeClass('paused');
 			sstop.find('a').html('Stop');
@@ -101,7 +101,7 @@ $(document).ready(function(){
 			wrap.addClass('paused');
 			sstop.find('a').html('Play');
 		}
-		
+
 		// scroll
 		var scrollEffect = inner.scrollTo(next, 1000);
 		current.removeClass('current');
@@ -111,17 +111,17 @@ $(document).ready(function(){
 			if(wrap.hasClass('paused') == false){ KSslideshow(slideshow, null);  }
 		});
 	}
-	
+
 	/*---------------------------------
 		HTML5 Placeholder Support
 	-----------------------------------*/
 	$('input[placeholder], textarea[placeholder]').placeholder();
-	
+
 	/*---------------------------------
 		SELECT MENUS - CHOSEN
 	-----------------------------------*/
 	$('select.fancy').chosen();
-	
+
 	/*---------------------------------
 		MEDIA
 	-----------------------------------*/
@@ -129,14 +129,43 @@ $(document).ready(function(){
 	$('a.video-placeholder').each(function(){
 		$(this).append('<span class="icon x-large white" data-icon="&nbsp;"></span>');
 	});
-	
+
 	// calendar
 	$('.calendar').each(function(){
 		if($(this).attr('data-month')) { cMonth = $(this).attr('data-month'); }
 		if($(this).attr('data-year')) { cYear = $(this).attr('data-year'); }
 		$(this).calendarWidget({month:cMonth, year: cYear});
 	});
-	
+
+    $('.calendar_before').click(function(){
+    	var cal = $('.calendar');
+    	var dates = new Date(cal.attr('data-year'), cal.attr('data-month'), 1);
+
+    	dates.setMonth(dates.getMonth() - 1);
+    	cal.attr('data-year', dates.getFullYear());
+    	cal.attr('data-month', dates.getMonth());
+    	// calendar
+    	cal.each(function(){
+    		if($(this).attr('data-month')) { cMonth = cal.attr('data-month'); }
+    		if($(this).attr('data-year')) { cYear = cal.attr('data-year'); }
+    		$(this).calendarWidget({month:cMonth, year: cYear});
+    	});
+    });
+
+    $('.calendar_next').click(function(){
+    	var cal = $('.calendar');
+    	var dates = new Date(cal.attr('data-year'), cal.attr('data-month'), 1);
+
+    	dates.setMonth(dates.getMonth() + 1);
+    	cal.attr('data-year', dates.getFullYear());
+    	cal.attr('data-month', dates.getMonth());
+    	// calendar
+    	cal.each(function(){
+    		if($(this).attr('data-month')) { cMonth = cal.attr('data-month'); }
+    		if($(this).attr('data-year')) { cYear = cal.attr('data-year'); }
+    		$(this).calendarWidget({month:cMonth, year: cYear});
+    	});
+    });
 	/*---------------------------------
 		Fancybox Lightbox
 	-----------------------------------*/
@@ -147,13 +176,13 @@ $(document).ready(function(){
 			overlayColor: '#000'
 		});
 	});
-	
+
 	// lightbox links
 	$('a.lightbox').fancybox({
 		overlayOpacity: 0.2,
 		overlayColor: '#000'
 	});
-	
+
 	/*---------------------------------
 		Tabs
 	-----------------------------------*/
@@ -165,7 +194,7 @@ $(document).ready(function(){
 		current = $(this).find('li.current a').attr('href');
 		$(current).show();
 	});
-	
+
 	// tab click
 	$('ul.tabs a[href^="#"]').live('click', function(e){
 		e.preventDefault();
@@ -178,7 +207,7 @@ $(document).ready(function(){
 		$(tab_next).show();
 		return false;
 	});
-	
+
 	/*---------------------------------
 		Image Style Helpers
 	-----------------------------------*/
@@ -193,7 +222,7 @@ $(document).ready(function(){
 			.css('width', $(this).width());
 		$(this).attr('class','').hide();
 	});
-	
+
 	/*---------------------------------
 		Image Caption
 	-----------------------------------*/
@@ -202,12 +231,12 @@ $(document).ready(function(){
 		$(this).parents('div.caption')
 			.attr('class', 'caption '+$(this).attr('class'))
 			.css('width', $(this).width()+'px');
-		if($(this).attr('title')){ 
+		if($(this).attr('title')){
 			$(this).parents('div.caption')
 			.append('<span>'+$(this).attr('title')+'</span>');
 		}
 	});
-	
+
 	/*---------------------------------
 		Notice
 	-----------------------------------*/
@@ -217,38 +246,38 @@ $(document).ready(function(){
 		$(this).hide();
 		notice.fadeOut('slow');
 	});
-	
+
 	/*---------------------------------
 		ToolTip - TipTip
-	-----------------------------------*/	
-	
+	-----------------------------------*/
+
 	// Standard tooltip
 	$('.tooltip, .tooltip-top, .tooltip-bottom, .tooltip-right, .tooltip-left').each(function(){
-		// variables 
+		// variables
 		var tpos = 'top';
 		var content = $(this).attr('title');
 		var dataContent = $(this).attr('data-content');
 		var keepAlive = false;
 		var action = 'hover';
-		
+
 		// position
 		if($(this).hasClass('tooltip-top')) 	{ tpos = 'top'; 	}
 		if($(this).hasClass('tooltip-right')) 	{ tpos = 'right'; 	}
 		if($(this).hasClass('tooltip-bottom')) 	{ tpos = 'bottom'; 	}
 		if($(this).hasClass('tooltip-left')) 	{ tpos = 'left'; 	}
-		
+
 		// content
 		$('.tooltip-content').removeClass('hide').wrap('<div class="hide"></div>');
 		if(dataContent) { content = $(dataContent).html(); keepAlive = true; }
-		
+
 		// action (hover or click) defaults to hover
 		if($(this).attr('data-action') == 'click') { action = 'click'; }
-		
+
 		// tooltip
 		$(this).attr('title','')
 		.tipTip({defaultPosition: tpos, content: content, keepAlive: keepAlive, activation: action});
 	});
-	
+
 	/*---------------------------------
 		Table Sort
 	-----------------------------------*/
@@ -264,16 +293,16 @@ $(document).ready(function(){
 		// update arrow icon
 		$(this).parents('table.sortable').find('span.arrow').remove();
 		$(this).append('<span class="arrow"></span>');
-	
+
 		// sort direction
 		var nr = $(this).attr('rel');
 		aAsc[nr] = aAsc[nr]=='asc'?'desc':'asc';
 		if(aAsc[nr] == 'desc'){ $(this).find('span.arrow').addClass('up'); }
-		
+
 		// sort rows
 		var rows = $(this).parents('table.sortable').find('tbody tr');
 		rows.tsort('td:eq('+nr+')',{order:aAsc[nr],attr:'value'});
-		
+
 		// fix row classes
 		rows.removeClass('alt first last');
 		var table = $(this).parents('table.sortable');
@@ -281,7 +310,7 @@ $(document).ready(function(){
 		table.find('tr:first').addClass('first');
 		table.find('tr:last').addClass('last');
 	});
-	
+
 	/*---------------------------------
 		Icons
 	-----------------------------------*/
@@ -289,7 +318,7 @@ $(document).ready(function(){
 		$(this).append('<span aria-hidden="true">'+$(this).attr('data-icon')+'</span>')
 		.css('display', 'inline-block');
 	});
-	
+
 	/*---------------------------------
 		CSS Helpers
 	-----------------------------------*/
@@ -306,12 +335,12 @@ $(document).ready(function(){
 	$('hr').before('<div class="clear">&nbsp;</div>');
 	$('[class*=col_]').not('input, label').addClass('column').wrapInner('<div class="inner">');
 	$('pre').addClass('prettyprint');prettyPrint();
-	
+
 });
 
 /**
  * jQuery.LocalScroll - Animated scrolling navigation, using anchors.
- * Copyright © 2007-2009 Ariel Flesler - aflesler(at)gmail(dot)com | http://flesler.blogspot.com
+ * Copyright ﾂｩ 2007-2009 Ariel Flesler - aflesler(at)gmail(dot)com | http://flesler.blogspot.com
  * Dual licensed under MIT and GPL.
  * Date: 3/11/2009
  * @author Ariel Flesler
@@ -321,7 +350,7 @@ $(document).ready(function(){
 
 /**
  * jQuery.ScrollTo - Easy element scrolling using jQuery.
- * Copyright © 2007-2009 Ariel Flesler - aflesler(at)gmail(dot)com | http://flesler.blogspot.com
+ * Copyright ﾂｩ 2007-2009 Ariel Flesler - aflesler(at)gmail(dot)com | http://flesler.blogspot.com
  * Dual licensed under MIT and GPL.
  * Date: 5/25/2009
  * @author Ariel Flesler
@@ -348,10 +377,10 @@ a.focus(function(){if(this.value==""){var a=this.createTextRange();a.collapse(!0
  * Simple and fancy lightbox alternative
  *
  * Examples and documentation at: http://fancybox.net
- * 
+ *
  * Copyright (c) 2008 - 2010 Janis Skarnelis
  * That said, it is hardly a one-person project. Many people have submitted bugs, code, and offered their advice freely. Their support is greatly appreciated.
- * 
+ *
  * Version: 1.3.4 (11/11/2010)
  * Requires: jQuery v1.3+
  *
@@ -396,7 +425,7 @@ easingOut:"swing",showCloseButton:true,showNavArrows:true,enableEscapeButton:tru
 
 // Chosen, a Select Box Enhancer for jQuery and Protoype
 // by Patrick Filler for Harvest, http://getharvest.com
-// 
+//
 // Version 0.9.7
 // Full source at https://github.com/harvesthq/chosen
 // Copyright (c) 2011 Harvest http://getharvest.com
@@ -417,7 +446,7 @@ easingOut:"swing",showCloseButton:true,showNavArrows:true,enableEscapeButton:tru
  * browser tooltip. It is extremely lightweight and very smart in
  * that it detects the edges of the browser window and will make sure
  * the tooltip stays within the current window size. As a result the
- * tooltip will adjust itself to be displayed above, below, to the left 
+ * tooltip will adjust itself to be displayed above, below, to the left
  * or to the right depending on what is necessary to stay within the
  * browser window. It is completely customizable as well via CSS.
  *
@@ -434,6 +463,6 @@ easingOut:"swing",showCloseButton:true,showNavArrows:true,enableEscapeButton:tru
 	jQuery Calendar
 	http://eisabainyo.net/demo/jquery.calendar-widget.php
 */
-(function(g){function f(a,b){var c=[31,28,31,30,31,30,31,31,30,31,30,31];return 1==a&&0==b%4&&(0!=b%100||0==b%400)?29:c[a]}g.fn.calendarWidget=function(a){var b=new Date,c=b.getMonth(),b=b.getYear()+1900,c={month:c,year:b};g.extend(c,a);var e="Sun,Mon,Tue,Wed,Thu,Fri,Sat".split(",");month=b=parseInt(c.month);year=parseInt(c.year);a=""+('<h4 id="current-month">'+"January,February,March,April,May,June,July,August,September,October,November,December".split(",")[month]+" "+
-year+"</h4>");a=a+('<table class="calendar-month " id="calendar-month'+b+' " cellspacing="0">')+"<tr>";for(d=0;7>d;d++)a+='<th class="weekday">'+e[d]+"</th>";a+="</tr>";f(month,year);b=new Date(year,month,1);c=b.getDay();e=f(month,year);b=new Date(year,month,1);c=b.getDay();e=0==month?11:month-1;e=f(e,11==e?year-1:year);c=0==c&&b?7:c;for(j=b=0;42>j;j++)j<c?a+='<td class="other-month"><span class="day">'+(e-c+j+1)+"</span></td>":j>=c+f(month,year)?(b+=1,a+='<td class="other-month"><span class="day">'+
+(function(g){function f(a,b){var c=[31,28,31,30,31,30,31,31,30,31,30,31];return 1==a&&0==b%4&&(0!=b%100||0==b%400)?29:c[a]}g.fn.calendarWidget=function(a){var b=new Date,c=b.getMonth(),b=b.getYear()+1900,c={month:c,year:b};g.extend(c,a);var e="Sun,Mon,Tue,Wed,Thu,Fri,Sat".split(",");month=b=parseInt(c.month);year=parseInt(c.year);a=""+('<h4 id="current-month">'+ year + "年" + "1月,2月,3月,4月,5月,6月,7月,8月,9月,10月,11月,12月".split(",")[month]+" "+
+"</h4>");a=a+('<table class="calendar-month " id="calendar-month'+b+' " cellspacing="0">')+"<tr>";for(d=0;7>d;d++)a+='<th class="weekday">'+e[d]+"</th>";a+="</tr>";f(month,year);b=new Date(year,month,1);c=b.getDay();e=f(month,year);b=new Date(year,month,1);c=b.getDay();e=0==month?11:month-1;e=f(e,11==e?year-1:year);c=0==c&&b?7:c;for(j=b=0;42>j;j++)j<c?a+='<td class="other-month"><span class="day">'+(e-c+j+1)+"</span></td>":j>=c+f(month,year)?(b+=1,a+='<td class="other-month"><span class="day">'+
 b+"</span></td>"):a+='<td class="current-month day'+(j-c+1)+'"><span class="day">'+(j-c+1)+"</span></td>",6==j%7&&(a+="</tr>");this.html(a+"</table>");return this}})(jQuery);
