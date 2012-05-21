@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html><head>
+<title>HTML KickStart Admin template</title>
+<meta charset="UTF-8">
+<meta name="description" content="" />
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery/jquery-ui-1.8.20.custom.min.js"></script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script type="text/javascript" src="js/prettify.js"></script>                   <!-- PRETTIFY -->
+<script type="text/javascript" src="js/kickstart.js"></script>                  <!-- KICKSTART -->
+<link rel="stylesheet" type="text/css" href="css/kickstart.css" media="all" />          <!-- KICKSTART -->
+<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />              <!-- CUSTOM STYLES -->
+<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.8.20.custom.css" media="all" />              <!-- JQUERY UI -->
+</head>
+<body>
+<div id="header">
+  <div id="logo">
+  <a href="#">Project Name</a>
+  </div>
+  <div id="header-r-menu">
+    <button class="small"><span class="icon gray" data-icon="u"></span>example@example.com</button>
+  </div>
+</div>
+
+<a id="top-of-page"></a>
+
+<div id="wrap" class="clearfix">
+  <div id="left-menu" class="col_3">
+
+    <ul class="left-menu-ul alt">
+      <li class="first-left-menu">
+        <div class="left-menu-title"><a href="#">Menu</a></div>
+        <ul class="alt">
+          <li><a href="#">hoge</a></li>
+        </ul>
+      </li>
+      <li>
+        <div  class="left-menu-title"><a href="#">Menu</a></div>
+        <ul class="alt">
+          <li><a href="#">hoge</a></li>
+        </ul>
+      </li>
+    </ul>
+
+  </div>
+
+  <div class="show-icon">
+    <span class="icon medium gray tooltip-left" data-icon=";" title="ダブルクリックで左メニューを展開します"></span>
+  </div>
+
+  <div id="main-content" class="col_9">
+  <table class="striped tight sortable" cellspacing="0" cellpadding="0">
+	<thead><tr class="alt first last">
+		<th rel="0" value="Name">Name<span class="arrow up"></span></th>
+		<th rel="1" value="Number">Number</th>
+		<th rel="2" value="Color">Color</th>
+		<th rel="3" value="Actions">Actions</th>
+	</tr></thead>
+	<tbody><tr class="">
+		<td value="木村">木村</td>
+		<td value="555-5698">555-5698</td>
+		<td value="Gold">Gold</td>
+		<td value=" "><a href="edit.html"><span class="icon small gray" data-icon="7"></span></a>&nbsp;<a href="#"><span class="icon small gray" data-icon="m"></span></a></td>
+	</tr><tr class="alt">
+		<td value="鈴木">鈴木</td>
+		<td value="666-7654">666-7654</td>
+		<td value="Red">Red</td>
+		<td value=" "><a href="#"><span class="icon small gray" data-icon="7"></span></a>&nbsp;<a href="#"><span class="icon small gray" data-icon="m"></span></a></td>
+	</tr><tr class="">
+		<td value="田中">田中</td>
+		<td value="555-4325">555-4325</td>
+		<td value="Blue">Blue</td>
+		<td value=" "><a href="#"><span class="icon small gray" data-icon="7"></span></a>&nbsp;<a href="#"><span class="icon small gray" data-icon="m"></span></a></td>
+	</tr>
+	<tr class="alt last">
+		<td value="佐藤">佐藤</td>
+		<td value="555-6732">555-6732</td>
+		<td value="Pink">Pink</td>
+		<td value=" "><a href="#"><span class="icon small gray" data-icon="7"></span></a>&nbsp;<a href="#"><span class="icon small gray" data-icon="m"></span></a></td>
+	</tr></tbody>
+	</table>
+  </div>
+
+  <!-- ===================================== START FOOTER ===================================== -->
+  <div class="clear"></div>
+  <div id="footer">
+  &copy; Copyright 2011 Project Name2012 All Rights Reserved. This website was built with <a href="http://www.99lime.com">HTML KickStart</a>
+  </div>
+
+</div><!-- END WRAP -->
+<script>
+<!--
+$(function() {
+  $('.jquery-ui-sortable').sortable({
+    cursor      : 'move',
+    opacity     : 0.7,
+    connectWith : '.jquery-ui-sortable',
+    handle      : '.box-icon-move'
+  });
+
+  var leftMenu = $('#left-menu');
+
+  leftMenu.resizable({
+    handles: 'e',
+    maxWidth: 300,
+  }).css('height', $('#wrap').height() + 'px');
+
+  var mainContent = $('#main-content');
+  var showIcon    = $('.show-icon').hide();
+
+  $('.ui-resizable-handle').dblclick(function() {
+    $(leftMenu).hide();
+    mainContent.removeClass('col_9');
+    mainContent.addClass('col_12');
+    showIcon.show();
+  });
+
+  showIcon.dblclick(function() {
+    leftMenu.show();
+    mainContent.removeClass('col_12');
+    mainContent.addClass('col_9');
+    showIcon.hide();
+  });
+
+  var subMenu = $(".left-menu-ul li > ul").hide();
+  var firstLeftMenu = $('.first-left-menu').css('border-top', 'none');
+  var leftMenuList  = $('.left-menu-ul li');
+
+  leftMenuList.click(function(){
+    $('ul',this).slideToggle().css('background', 'whiteSmoke');
+  });
+
+});
+// -->
+</script>
+</body></html>

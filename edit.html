@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html><head>
+<title>HTML KickStart Admin template</title>
+<meta charset="UTF-8">
+<meta name="description" content="" />
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery/jquery-ui-1.8.20.custom.min.js"></script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script type="text/javascript" src="js/prettify.js"></script>                   <!-- PRETTIFY -->
+<script type="text/javascript" src="js/kickstart.js"></script>                  <!-- KICKSTART -->
+<link rel="stylesheet" type="text/css" href="css/kickstart.css" media="all" />          <!-- KICKSTART -->
+<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />              <!-- CUSTOM STYLES -->
+<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.8.20.custom.css" media="all" />              <!-- JQUERY UI -->
+</head>
+<body>
+<div id="header">
+  <div id="logo">
+  <a href="#">Project Name</a>
+  </div>
+  <div id="header-r-menu">
+    <button class="small"><span class="icon gray" data-icon="u"></span>example@example.com</button>
+  </div>
+</div>
+
+<a id="top-of-page"></a>
+
+<div id="wrap" class="clearfix">
+  <div id="left-menu" class="col_3">
+
+    <ul class="left-menu-ul alt">
+      <li class="first-left-menu">
+        <div class="left-menu-title"><a href="#">Menu</a></div>
+        <ul class="alt">
+          <li><a href="#">hoge</a></li>
+        </ul>
+      </li>
+      <li>
+        <div  class="left-menu-title"><a href="#">Menu</a></div>
+        <ul class="alt">
+          <li><a href="#">hoge</a></li>
+        </ul>
+      </li>
+    </ul>
+
+  </div>
+
+  <div class="show-icon">
+    <span class="icon medium gray tooltip-left" data-icon=";" title="ダブルクリックで左メニューを展開します"></span>
+  </div>
+
+  <div id="main-content" class="col_9">
+	<ul class="tabs right">
+	<li><a href="#tabr1"><span class="icon small gray" data-icon="7"></span>編集</a></li>
+	<li><a href="#tabr2"><span class="icon small gray" data-icon="+"></span>新規</a></li>
+	<li><a href="#tabr3"><span class="icon small gray" data-icon="-"></span>削除</a></li>
+	</ul>
+
+	<div id="tabr1" class="tab-content">
+      <form method="post" action="">
+        <label for="id" class="col_4 right">ID</label>
+	    <input type="text" name="id" placeholder="id" disabled="disabled" value="1" class="col_8" />
+        <hr />
+        <label for="id" class="col_4 right">名前</label>
+        <input type="text" name="name" placeholder="名前を入力して下さい" value="木村" class="col_8" />
+        <hr />
+        <div class="right">
+          <select id="color_edit" class="col_8 fancy center">
+            <option value="0">---------------- カラーを選択して下さい ----------------</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+          </select>
+		</div>
+		<hr />
+        <div class="right">
+          <input type="submit" value="確認" class="orange" />
+        </div>
+      </form>
+	</div>
+	<div id="tabr2" class="tab-content">
+      <form method="post" action="">
+        <label for="id" class="col_4 right">ID</label>
+	    <input type="text" name="id" placeholder="id" disabled="disabled" value="10" class="col_8" />
+        <hr />
+        <label for="id" class="col_4 right">名前</label>
+        <input type="text" name="name" placeholder="名前を入力して下さい" class="col_8" />
+        <hr />
+        <div class="right">
+          <select id="color_insert" class="col_8 fancy center">
+            <option value="0">---------------- カラーを選択して下さい ----------------</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+          </select>
+		</div>
+		<hr />
+        <div class="right">
+          <input type="submit" value="確認" class="orange" />
+        </div>
+      </form>
+	</div>
+	<div id="tabr3" class="tab-content">
+      <form method="post" action="">
+        <label for="id" class="col_4 right">ID</label>
+	    <input type="text" name="id" placeholder="id" value="1" disabled="disabled" class="col_8" />
+        <hr />
+        <label for="id" class="col_4 right">名前</label>
+        <input type="text" name="name" value="木村" disabled="disabled" class="col_8" />
+        <hr />
+        <div class="right">
+          <select id="color_delete" class="col_8 fancy center" disabled="disabled">
+            <option value="1" selected="selected">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+          </select>
+		</div>
+		<hr />
+        <div class="right">
+          <input type="submit" value="確認" class="orange" />
+        </div>
+      </form>
+	</div>
+  </div>
+
+  <!-- ===================================== START FOOTER ===================================== -->
+  <div class="clear"></div>
+  <div id="footer">
+  &copy; Copyright 2011 Project Name2012 All Rights Reserved. This website was built with <a href="http://www.99lime.com">HTML KickStart</a>
+  </div>
+
+</div><!-- END WRAP -->
+<script>
+<!--
+$(function() {
+  $('.jquery-ui-sortable').sortable({
+    cursor      : 'move',
+    opacity     : 0.7,
+    connectWith : '.jquery-ui-sortable',
+    handle      : '.box-icon-move'
+  });
+
+  var leftMenu = $('#left-menu');
+
+  leftMenu.resizable({
+    handles: 'e',
+    maxWidth: 300,
+  }).css('height', $('#wrap').height() + 'px');
+
+  var mainContent = $('#main-content');
+  var showIcon    = $('.show-icon').hide();
+
+  $('.ui-resizable-handle').dblclick(function() {
+    $(leftMenu).hide();
+    mainContent.removeClass('col_9');
+    mainContent.addClass('col_12');
+    showIcon.show();
+  });
+
+  showIcon.dblclick(function() {
+    leftMenu.show();
+    mainContent.removeClass('col_12');
+    mainContent.addClass('col_9');
+    showIcon.hide();
+  });
+
+  var subMenu = $(".left-menu-ul li > ul").hide();
+  var firstLeftMenu = $('.first-left-menu').css('border-top', 'none');
+  var leftMenuList  = $('.left-menu-ul li');
+
+  leftMenuList.click(function(){
+    $('ul',this).slideToggle().css('background', 'whiteSmoke');
+  });
+
+});
+// -->
+</script>
+</body></html>
