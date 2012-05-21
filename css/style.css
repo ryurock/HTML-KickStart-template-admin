@@ -148,7 +148,6 @@ margin:-1px -1px 0 -1px;
 .float-r{
   float: right;
 }
-.
 .calendar-menu{
   min-height: 16px;
   text-shadow:0px 1px 0px #fff;
@@ -175,10 +174,8 @@ margin:-1px -1px 0 -1px;
   border-bottom: 1px solid #DDD;
   background: whiteSmoke;
   padding: 6px;
-  margin:0 auto;
 }
 .form_label_even{
   border-bottom: 1px solid #DDD;
   padding: 6px;
-  margin:0 auto;
 }
